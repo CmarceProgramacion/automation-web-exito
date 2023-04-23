@@ -44,13 +44,7 @@ public class SelectArticleTask implements Task {
                 SelectArticles.withData(RandomElementsUtil.randomLocation(BUTTON_BUY.resolveAllFor(actor).size()))
         );
 
-
-        // String nameArticle = LABEL_NAME_ARTICLE.resolveFor(actor).getText();
-        //  String valorArticle = LABEL_PRICE_ARTICLE_UNIT.resolveFor(actor).getText();
-        // System.out.println(nameArticle + "-----------------------------" + valorArticle);
-
         actor.attemptsTo(
-
                 Click.on(ICON_SHOPPING_CART)
         );
     }
