@@ -1,6 +1,6 @@
 package com.exito.tasks;
 
-import com.exito.interactions.SelectArticles;
+import com.exito.interactions.SelectProduct;
 import com.exito.utils.RandomElementsUtil;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -13,18 +13,18 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static com.exito.userinterfaces.HomePage.*;
 
-public class SelectArticleTask implements Task {
+public class SelectProductTask implements Task {
     private String category;
     private String subcategory;
     private int numberElements;
 
-    public SelectArticleTask(String category, String subcategory) {
+    public SelectProductTask(String category, String subcategory) {
         this.category = category;
         this.subcategory = subcategory;
     }
 
     public static Performable whitData(String category, String subcategory) {
-        return Tasks.instrumented(SelectArticleTask.class, category, subcategory);
+        return Tasks.instrumented(SelectProductTask.class, category, subcategory);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class SelectArticleTask implements Task {
         );
 
         actor.attemptsTo(
-                SelectArticles.withData(RandomElementsUtil.randomLocation(BUTTON_BUY.resolveAllFor(actor).size()))
+                SelectProduct.withData(RandomElementsUtil.randomLocation(BUTTON_BUY.resolveAllFor(actor).size()))
         );
 
         actor.attemptsTo(

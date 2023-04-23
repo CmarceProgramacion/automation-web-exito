@@ -8,7 +8,7 @@ public class RandomElementsUtil {
     public static List randomLocation(int maximumNumber) {
 
         System.out.println("-----" + maximumNumber);
-        int quantityNumbers = 5;
+        int quantityNumbers = 2;
         Random random = new Random();
         List<Integer> listNumbers = new ArrayList<>();
 
@@ -24,7 +24,7 @@ public class RandomElementsUtil {
 
     public static int randomUnits() {
         int unit;
-        int maxAmount = 10;
+        int maxAmount = 3;
         Random random = new Random();
         unit = random.nextInt(maxAmount) + 1;
         System.out.println("unidades: " + unit);

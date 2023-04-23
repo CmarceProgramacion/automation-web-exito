@@ -1,14 +1,14 @@
 package com.exito.models;
 
-public class ArticleModel {
+public class ProductModel {
     private String name;
     private int unitValue;
     private int unitAmount;
 
-    public ArticleModel() {
+    public ProductModel() {
     }
 
-    public ArticleModel(String name, int unitValue, int amount) {
+    public ProductModel(String name, int unitValue, int amount) {
         this.name = name;
         this.unitValue = unitValue;
         this.unitAmount = amount;
@@ -40,7 +40,7 @@ public class ArticleModel {
 
     @Override
     public String toString() {
-        return "ArticleModel{" +
+        return "ProductModel{" +
                 "name='" + name + '\'' +
                 ", unitValue=" + unitValue +
                 ", unitAmount=" + unitAmount +
