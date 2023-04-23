@@ -1,6 +1,6 @@
 package com.exito.interactions;
 
-import com.exito.models.ArticleModel;
+import com.exito.models.ProductModel;
 import com.exito.utils.RandomElementsUtil;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
@@ -14,25 +14,25 @@ import java.util.List;
 
 import static com.exito.userinterfaces.HomePage.*;
 
-public class SelectArticles implements Interaction {
+public class SelectProduct implements Interaction {
     private List<Integer> listNumbers;
-    private static List<ArticleModel> listArticleModels = new ArrayList<>();
+    private static List<ProductModel> listProductModels = new ArrayList<>();
     private int unit;
 
 
-    public SelectArticles(List<Integer> listNumbers) {
+    public SelectProduct(List<Integer> listNumbers) {
         this.listNumbers = listNumbers;
         this.unit = unit;
     }
 
     public static Performable withData(List<Integer> listNumbers) {
-        return Tasks.instrumented(SelectArticles.class, listNumbers);
+        return Tasks.instrumented(SelectProduct.class, listNumbers);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        ArticleModel articleModel = new ArticleModel();
+        ProductModel productModel = new ProductModel();
 
         for (int location : listNumbers) {
             actor.attemptsTo(
@@ -47,14 +47,14 @@ public class SelectArticles implements Interaction {
 
             for (int x = 1; x < units; x++) {
                 actor.attemptsTo(
-                        Click.on(ICON_SELECT_NUMBER_ARTICLES)
+                        Click.on(ICON_SELECT_PRODUCT_NUMBER)
                 );
             }
 
-            articleModel.setName(LABEL_NAME_ARTICLE.resolveFor(actor).getText());
-            articleModel.setUnitAmount(units);
-            articleModel.setUnitValue(Integer.parseInt(LABEL_PRICE_ARTICLE_UNIT.resolveFor(actor).getText().replaceAll("[^\\d]", "")));
-            listArticleModels.add(articleModel);
+            productModel.setName(LABEL_PRODUCT_NAME.resolveFor(actor).getText());
+            productModel.setUnitAmount(units);
+            productModel.setUnitValue(Integer.parseInt(LABEL_PRICE_PRODUCT_UNIT.resolveFor(actor).getText().replaceAll("[^\\d]", "")));
+            listProductModels.add(productModel);
 
             actor.attemptsTo(
                     Click.on(LABEL_CONTINUE_SHOPPING)
@@ -63,7 +63,7 @@ public class SelectArticles implements Interaction {
         }
     }
 
-    public static List<ArticleModel> getListArticleModels(){
-        return listArticleModels;
+    public static List<ProductModel> getListProductModels(){
+        return listProductModels;
     }
 }
