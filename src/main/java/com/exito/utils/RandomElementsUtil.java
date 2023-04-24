@@ -24,7 +24,7 @@ public class RandomElementsUtil {
 
     public static int randomUnits() {
         int unit;
-        int maxAmount = 3;
+        int maxAmount = 2;
         Random random = new Random();
         unit = random.nextInt(maxAmount) + 1;
         System.out.println("unidades: " + unit);

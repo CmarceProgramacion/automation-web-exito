@@ -47,5 +47,6 @@ public class SelectProductTask implements Task {
         actor.attemptsTo(
                 Click.on(ICON_SHOPPING_CART)
         );
+
     }
 }
