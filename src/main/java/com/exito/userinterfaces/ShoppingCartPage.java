@@ -5,7 +5,9 @@ import net.serenitybdd.screenplay.targets.Target;
 
 public class ShoppingCartPage extends PageObject {
 
-    public static final Target LABEL_PRODUCT_NAMES = Target.the("").locatedBy("//span[text()= '{0}']");
-    public static final Target LABEL_PRODUCT_VALUE = Target.the("").locatedBy("(//preceding::span[text()= '{0}']//following::span[not(boolean(@class))]/span[contains(@class,'currencyContainer')])[1]");
-    public static final Target LABEL_PRODUCT_UNIT = Target.the("").locatedBy("(//preceding::span[text()='Cabecero Para Cama Queen Dublin Gris']//following::span[boolean(@data-molecule-quantity-und-value)])[1]");
+    public static final Target IMG_PRODUCT =Target.the("").locatedBy("//div[@class='exito-product-details-3-x-elementScroll']");
+
+    public static final Target LABEL_PRODUCT_NAMES = Target.the("").locatedBy("//a[@id='product-name{0}']");
+    public static final Target LABEL_PRODUCT_VALUE = Target.the("").locatedBy("(//a[@id='product-name{0}']//following::span[@class='total-selling-price'])[1]");
+    public static final Target LABEL_PRODUCT_UNITS = Target.the("").locatedBy("//div[@class='totalItems']");
 }

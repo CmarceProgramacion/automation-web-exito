@@ -1,8 +1,11 @@
 package com.exito.stepdefinitions;
 
 import com.exito.interactions.SelectProduct;
-import com.exito.tasks.SelectProductTask;
+import com.exito.questions.VerifyNumbersByProduct;
 import com.exito.questions.VerifyProductNames;
+import com.exito.questions.VerifyProductPrices;
+import com.exito.questions.VerifyProductsNumbers;
+import com.exito.tasks.SelectProductTask;
 import com.exito.userinterfaces.HomePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -27,6 +30,20 @@ public class CartProductsExitoStepDefinition {
 
     @Then("Verification of the items in my shopping cart")
     public void verificationOfTheItemsInMyShoppingCart() {
-        theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerifyProductNames.verify(SelectProduct.getListProductModels())));
+        theActorInTheSpotlight().should(
+                GivenWhenThen.seeThat(VerifyProductNames.verify(SelectProduct.getListProductModels()))
+        );
+
+        theActorInTheSpotlight().should(
+                GivenWhenThen.seeThat(VerifyProductPrices.verify(SelectProduct.getListProductModels()))
+        );
+
+        theActorInTheSpotlight().should(
+                GivenWhenThen.seeThat(VerifyNumbersByProduct.verify(SelectProduct.getListProductModels()))
+        );
+
+        theActorInTheSpotlight().should(
+                GivenWhenThen.seeThat(VerifyProductsNumbers.verify(SelectProduct.getListProductModels()))
+        );
     }
 }

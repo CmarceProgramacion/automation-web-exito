@@ -28,7 +28,7 @@ ext {
     serenityVersion = "3.6.22"
     serenityCucumberVersion = "3.6.22"
     serenityEnsureVersion = "3.2.5"
-    slf4jSimpleVersion = "1.7.30"
+    slf4jSimpleVersion = "2.0.7"
     junitVersion = "4.13.2"
 }
 
