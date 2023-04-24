@@ -12,7 +12,8 @@ import net.serenitybdd.screenplay.actions.Scroll;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.exito.userinterfaces.HomePage.*;
+import static com.exito.userinterfaces.FastPurchase.*;
+import static com.exito.userinterfaces.HomePage.BUTTON_BUY;
 import static com.exito.userinterfaces.ShoppingCartPage.IMG_PRODUCT;
 
 public class SelectProduct implements Interaction {
