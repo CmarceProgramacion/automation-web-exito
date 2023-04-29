@@ -14,7 +14,7 @@ Feature: Validate shopping cart
   @CaseShoppingCart
   Scenario Outline: Validate items in shopping cart
     When I select the items for purchase
-    |<category>|<subcategory>|
+      | <category> | <subcategory> |
     Then Verification of the items in my shopping cart
 
     Examples:

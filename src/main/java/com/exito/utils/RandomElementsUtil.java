@@ -5,10 +5,9 @@ import java.util.List;
 import java.util.Random;
 
 public class RandomElementsUtil {
-    public static List randomLocation(int maximumNumber) {
+    public static List<Integer> randomLocation(int maximumNumber) {
 
-        System.out.println("-----" + maximumNumber);
-        int quantityNumbers = 2;
+        int quantityNumbers = 5;
         Random random = new Random();
         List<Integer> listNumbers = new ArrayList<>();
 
@@ -18,17 +17,14 @@ public class RandomElementsUtil {
                 listNumbers.add(number);
             }
         }
-        System.out.println(listNumbers);
         return listNumbers;
     }
 
     public static int randomUnits() {
         int unit;
-        int maxAmount = 2;
+        int maxAmount = 10;
         Random random = new Random();
         unit = random.nextInt(maxAmount) + 1;
-        System.out.println("unidades: " + unit);
         return unit;
     }
 }
-

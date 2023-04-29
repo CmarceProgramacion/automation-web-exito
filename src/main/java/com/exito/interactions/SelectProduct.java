@@ -19,12 +19,10 @@ import static com.exito.userinterfaces.ShoppingCartPage.IMG_PRODUCT;
 public class SelectProduct implements Interaction {
     private List<Integer> listNumbers;
     private static List<ProductModel> listProductModels = new ArrayList<>();
-    private int unit;
-
 
     public SelectProduct(List<Integer> listNumbers) {
         this.listNumbers = listNumbers;
-        this.unit = unit;
+
     }
 
     public static Performable withData(List<Integer> listNumbers) {
@@ -37,8 +35,9 @@ public class SelectProduct implements Interaction {
         ProductModel productModel;
 
         for (int location : listNumbers) {
-            actor.attemptsTo(Scroll.to(BUTTON_BUY.resolveAllFor(actor).get(location)).andAlignToBottom(), Click.on(BUTTON_BUY.resolveAllFor(actor).get(location)));
-            actor.attemptsTo(Click.on(BUTTON_ADD));
+            actor.attemptsTo(Scroll.to(BUTTON_BUY.resolveAllFor(actor).get(location)).andAlignToBottom(),
+                    Click.on(BUTTON_BUY.resolveAllFor(actor).get(location)),
+                    Click.on(BUTTON_ADD));
 
             int units = RandomElementsUtil.randomUnits();
 
@@ -46,11 +45,9 @@ public class SelectProduct implements Interaction {
                 actor.attemptsTo(Click.on(ICON_SELECT_PRODUCT_NUMBER));
             }
             productModel = new ProductModel(IMG_PRODUCT.resolveFor(actor).getAttribute("name"), LABEL_PRODUCT_NAME.resolveFor(actor).getText(), units, Integer.parseInt(LABEL_PRICE_PRODUCT_UNIT.resolveFor(actor).getText().replaceAll("[^\\d]", "")));
-
             listProductModels.add(productModel);
-
             actor.attemptsTo(Click.on(LABEL_CONTINUE_SHOPPING));
-            System.out.println(location);
+
         }
     }
 

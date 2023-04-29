@@ -16,7 +16,7 @@ import static com.exito.userinterfaces.HomePage.*;
 public class SelectProductTask implements Task {
     private String category;
     private String subcategory;
-    private int numberElements;
+
 
     public SelectProductTask(String category, String subcategory) {
         this.category = category;
@@ -37,16 +37,9 @@ public class SelectProductTask implements Task {
         actor.attemptsTo(
                 WaitUntil.the(BUTTON_SHOW_MORE, WebElementStateMatchers.isVisible()),
                 Scroll.to(BUTTON_SHOW_MORE),
-                WaitUntil.the(ICON_LOAD, WebElementStateMatchers.isNotVisible())
-        );
-
-        actor.attemptsTo(
-                SelectProduct.withData(RandomElementsUtil.randomLocation(BUTTON_BUY.resolveAllFor(actor).size()))
-        );
-
-        actor.attemptsTo(
+                WaitUntil.the(ICON_LOAD, WebElementStateMatchers.isNotVisible()),
+                SelectProduct.withData(RandomElementsUtil.randomLocation(BUTTON_BUY.resolveAllFor(actor).size())),
                 Click.on(ICON_SHOPPING_CART)
         );
-
     }
 }

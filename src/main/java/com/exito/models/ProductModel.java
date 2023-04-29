@@ -1,7 +1,6 @@
 package com.exito.models;
 
 public class ProductModel {
-
     private String idProduct;
     private String name;
     private int unitValue;
