@@ -14,7 +14,6 @@ public class VerifyProductsNumbers implements Question<Boolean> {
 
     public VerifyProductsNumbers(List<ProductModel> modelList) {
         this.modelList = modelList;
-
     }
 
     public static VerifyProductsNumbers verify(List<ProductModel> modelList) {
@@ -29,7 +28,6 @@ public class VerifyProductsNumbers implements Question<Boolean> {
             actualUnits = Integer.parseInt(LABEL_PRODUCT_UNITS.resolveFor(actor).getText().replaceAll("[^\\d]", ""));
             expectedUnits += model.getUnitValue();
         }
-
         return expectedUnits == actualUnits;
     }
 }

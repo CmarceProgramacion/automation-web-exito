@@ -6,7 +6,6 @@ import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
-
 public class BeforeAfterStepDefinition {
     @Before
     public void initialAutomationConfig() {

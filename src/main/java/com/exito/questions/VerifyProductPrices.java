@@ -13,7 +13,6 @@ import static com.exito.userinterfaces.ShoppingCartPage.LABEL_PRODUCT_VALUE;
 public class VerifyProductPrices implements Question<Boolean> {
 
     private List<ProductModel> modelList;
-
     public VerifyProductPrices(List<ProductModel> modelList) {
         this.modelList = modelList;
     }
@@ -28,7 +27,6 @@ public class VerifyProductPrices implements Question<Boolean> {
         for (ProductModel model : modelList) {
             int expectedProductPrice = model.getUnitValue() * model.getUnitAmount();
             int actualProductPrice = Integer.parseInt(LABEL_PRODUCT_VALUE.of(model.getIdProduct()).resolveFor(actor).getText().replaceAll("[^\\d]", ""));
-            System.out.println("fffñ "+actualProductPrice);
             if (expectedProductPrice != actualProductPrice) {
                 return false;
             }

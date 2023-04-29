@@ -29,5 +29,4 @@ public class VerifyNumbersByProduct implements Question<Boolean> {
         }
         return true;
     }
-
 }
