@@ -11,7 +11,6 @@ import static com.exito.userinterfaces.ShoppingCartPage.LABEL_PRODUCT_UNITS;
 public class VerifyProductsNumbers implements Question<Boolean> {
     private List<ProductModel> modelList;
 
-
     public VerifyProductsNumbers(List<ProductModel> modelList) {
         this.modelList = modelList;
     }

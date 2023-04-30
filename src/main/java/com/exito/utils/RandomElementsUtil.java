@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 public class RandomElementsUtil {
-    public static List<Integer> randomLocation(int maximumNumber) {
+    public static List<Integer> randomProduct(int maximumNumber) {
 
         int quantityNumbers = 5;
         Random random = new Random();

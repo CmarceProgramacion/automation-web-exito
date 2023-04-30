@@ -17,7 +17,6 @@ public class SelectProductTask implements Task {
     private String category;
     private String subcategory;
 
-
     public SelectProductTask(String category, String subcategory) {
         this.category = category;
         this.subcategory = subcategory;
@@ -38,7 +37,7 @@ public class SelectProductTask implements Task {
                 WaitUntil.the(BUTTON_SHOW_MORE, WebElementStateMatchers.isVisible()),
                 Scroll.to(BUTTON_SHOW_MORE),
                 WaitUntil.the(ICON_LOAD, WebElementStateMatchers.isNotVisible()),
-                SelectProduct.withData(RandomElementsUtil.randomLocation(BUTTON_BUY.resolveAllFor(actor).size())),
+                SelectProduct.withData(RandomElementsUtil.randomProduct(BUTTON_BUY.resolveAllFor(actor).size())),
                 Click.on(ICON_SHOPPING_CART)
         );
     }

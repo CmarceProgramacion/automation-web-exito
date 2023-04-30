@@ -11,7 +11,7 @@ Feature: Validate shopping cart
   Background: Access to the main platform
     Given that I access the platform of the Exito
 
-  @CaseShoppingCart
+  @ShoppingCart
   Scenario Outline: Validate items in shopping cart
     When I select the items for purchase
       | <category> | <subcategory> |

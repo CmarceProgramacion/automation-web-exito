@@ -35,9 +35,11 @@ public class SelectProduct implements Interaction {
         ProductModel productModel;
 
         for (int location : listNumbers) {
-            actor.attemptsTo(Scroll.to(BUTTON_BUY.resolveAllFor(actor).get(location)).andAlignToBottom(),
+            actor.attemptsTo(
+                    Scroll.to(BUTTON_BUY.resolveAllFor(actor).get(location)).andAlignToBottom(),
                     Click.on(BUTTON_BUY.resolveAllFor(actor).get(location)),
-                    Click.on(BUTTON_ADD));
+                    Click.on(BUTTON_ADD)
+            );
 
             int units = RandomElementsUtil.randomUnits();
 
