@@ -3,6 +3,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
 
+compileJava.options.encoding = 'UTF-8'git
+
 group 'com.starsharp'
 version '1.0-SNAPSHOT'
 
@@ -51,6 +53,10 @@ serenity {
 test {
     systemProperties System.getProperties()
     testLogging.showStandardStreams = true
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
 gradle.startParameter.continueOnFailure = true
