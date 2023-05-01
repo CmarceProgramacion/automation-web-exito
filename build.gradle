@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
 
-compileJava.options.encoding = 'UTF-8'git
+compileJava.options.encoding = 'UTF-8'
 
 group 'com.starsharp'
 version '1.0-SNAPSHOT'
