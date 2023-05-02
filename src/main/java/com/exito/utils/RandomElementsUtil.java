@@ -5,26 +5,25 @@ import java.util.List;
 import java.util.Random;
 
 public class RandomElementsUtil {
-    public static List<Integer> randomProduct(int maximumNumber) {
+    private static final int QUANTITY_NUMBERS = 5;
+    private static final int MAX_AMOUNT = 10;
 
-        int quantityNumbers = 5;
-        Random random = new Random();
+    public static List<Integer> generateRandomNumbers(int maximumNumber) {
         List<Integer> listNumbers = new ArrayList<>();
+        Random random = new Random();
 
-        while (listNumbers.size() < quantityNumbers) {
+        for (int i = 0; i < QUANTITY_NUMBERS; i++) {
             int number = random.nextInt(maximumNumber);
             if (!listNumbers.contains(number)) {
                 listNumbers.add(number);
             }
         }
+
         return listNumbers;
     }
 
-    public static int randomUnits() {
-        int unit;
-        int maxAmount = 10;
+    public static int generateRandomUnits() {
         Random random = new Random();
-        unit = random.nextInt(maxAmount) + 1;
-        return unit;
+        return random.nextInt(MAX_AMOUNT) + 1;
     }
 }

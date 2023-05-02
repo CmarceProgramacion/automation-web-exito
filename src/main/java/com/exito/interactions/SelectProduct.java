@@ -41,7 +41,7 @@ public class SelectProduct implements Interaction {
                     Click.on(BUTTON_ADD)
             );
 
-            int units = RandomElementsUtil.randomUnits();
+            int units = RandomElementsUtil.generateRandomUnits();
 
             for (int x = 1; x < units; x++) {
                 actor.attemptsTo(Click.on(ICON_SELECT_PRODUCT_NUMBER));
